@@ -26,3 +26,16 @@
     * Hint2: req의 input 종류 - params, query, body, cookie
 3. 2번을 수행해봤다면 EJS의 의미를 대략 이해할 수 있음. EJS는 HTML에 server의 parameter를 포함시켜 전송할 수 있도록 해주는 module이다.
 
+#### 12월 24일
+1. 제공된 express 서버를 구동한다.
+2. localhost:3000/form에 **postman**을 이용해 접근해보고, 아래와 같이 결과를 얻으려면 설정해야 하는 **URL, query, body** 설정을 기록한다.
+    * 예시
+    ![12_24_ex](./docsimg/12_24_example.png)
+    * **과제 문제**
+        1. GET 요청, success가 3번 반복될 것
+        2. POST 요청, success가 7번 반복될 것
+        3. PUT 요청, success가 5번 반복될 것
+        4. DELETE 요청, success가 1번 반복될 것
+    * 기존에 올려줬던 PPT의 HTTP Method를 결부해 이해하면 좋을 것 같습니다.
+    * Hint: Body 입력 시 "x-www-form-urlencoded"를 선택하세요!
+3. readme.md에 작성되어 있는 형식을 참고헤 2의 4가지 결과의 screenshot을 같이 첨부한다.
