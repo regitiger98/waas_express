@@ -40,7 +40,7 @@
     * Hint: Body 입력 시 "x-www-form-urlencoded"를 선택하세요!
 3. readme.md에 작성되어 있는 형식을 참고헤 2의 4가지 결과의 screenshot을 같이 첨부한다.
 
-#### 12월 25~26일: HTTP Header, File Type
+#### 12월 25일: HTTP Header, File Type
 HTTP header의 항목은 다음과 같이 나뉠 수 있다.
 * general header
 * entity header
@@ -91,3 +91,6 @@ postman으로 전송된 결과를 capture해 upload하면 됩니다.
 
 Ex) 
 ![1](./docsimg/12_25_ex5.png)
+
+#### 12월 26일: login 구현체 파악과 response code 이해
+TBD

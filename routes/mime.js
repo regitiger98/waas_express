@@ -2,6 +2,10 @@ let express = require('express');
 let router = express.Router();
 let path = require('path');
 
+router.get('/', function(req, res) {
+  return res.status(200).send("12월 25일 과제: MIME");
+});
+
 router.post('/', function(req, res) {
   const cntType = req.get('Content-type');
   return res.status(200).send(`etc: ${cntType}`);
