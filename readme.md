@@ -8,16 +8,16 @@
 
 ### 12월 24일
 * GET
-![12_24_GET](./docsimg/12_24_get.png)
+![12_24_GET](./docsimg/12_24_get.PNG)
 
 * POST
-![12_24_POST](./docsimg/12_24_post.png)
+![12_24_POST](./docsimg/12_24_post.PNG)
 
 * PUT
-![12_24_PUT](./docsimg/12_24_put.png)
+![12_24_PUT](./docsimg/12_24_put.PNG)
 
 * DELETE
-![12_24_DELETE](./docsimg/12_24_delete.png)
+![12_24_DELETE](./docsimg/12_24_delete.PNG)
 
 
 ### 12월 25일: HTTP Header, File Type
