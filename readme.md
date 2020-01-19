@@ -92,8 +92,7 @@ if(req.body.id !== '' && req.body.pw !== '') {
     })
 }
 ```
-
-    * id와 pw가 빈 문자열만 아니면 쿠키를 생성하도록 수정하였다.
+* id와 pw가 빈 문자열만 아니면 쿠키를 생성하도록 수정하였다.
 
 ```javascript
 if(req.cookies.name !== 'waas') {
@@ -101,7 +100,6 @@ if(req.cookies.name !== 'waas') {
 }
 return res.status(200).send("waas team");
 ```
-
-    * cookie value가 'waas'가 아니면 403 response code와 'Forbidden'을 띄우도록 수정하였다.
+* cookie value가 'waas'가 아니면 403 response code와 'Forbidden'을 띄우도록 수정하였다.
 
 ![12_27_403](./docsimg/12_27_403.PNG)
