@@ -83,6 +83,23 @@ res.cookie('name', 'waas', {
     - 그렇지 않으면 401 response code와 'unauthorized'
 
 ### 12월 27일: login 구현체 수정
-26일의 구현체를 살펴보면 1개의 ID로만 로그인을 하는 상황입니다.
-각자 새로운 로그인 ID를 생성해 집어넣고, waas가 아닌 id로 로그인한 경우 `/login/isLogin`에서 forbidden(403)을 띄워주도록 구현체를 수정해주세요.
-수정한 부분에 대한 간단한 설명과, screeenshot을 같이 첨부해주시면 됩니다.
+
+* 구현체 수정
+```javascript
+  if(req.body.id !== '' && req.body.pw !== '') {
+    res.cookie('name', req.body.id, {
+      maxAge: 30000   // 30000밀리초 → 30초
+    })
+  }
+```
+    - id와 pw가 빈 문자열만 아니면 쿠키를 생성하도록 수정하였다.
+
+```javascript
+    if(req.cookies.name !== 'waas') {
+      return res.status(403).send("Forbidden");
+    }
+    return res.status(200).send("waas team");
+```
+    - cookie value가 'waas'가 아니면 403 response code와 'Forbidden'을 띄우도록 수정하였다.
+    
+![12_27_403](./docsimg/12_27_403.PNG)
