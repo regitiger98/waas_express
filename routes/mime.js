@@ -16,7 +16,7 @@ router.post('/homework', function(req, res) {
     if(cntType === 'text/html') {
       return res.status(200).render('mime');
     }
-    if(cntType === 'text/html') {
+    if(cntType === 'application/json') {
       return res.status(200).json({hello: true});
     }
     if(cntType === 'text/plain' && req.query.image === 'y') {
