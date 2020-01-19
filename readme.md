@@ -36,20 +36,21 @@
 
 
 
-### 12월 26일: login 구현체 파악과 response code 이해
-1. 다음의 module이 추가 되었습니다, npm install을 통해 추가 module을 설치해주세요.
-* `cookie-parser`: cookie data parse
-* body-parser의 경우 설치하지 않고 express inline을 활용했음
+### 12월 26일
 
-2. 이번 구현체는 cookie를 이용한 간단한 login 서비스 입니다.
-* 유의해야할 점: 보안적으로 매우 취약합니다, 이해를 돕기 위해 쉽게 구현되어 있음
-    * cookie가 아닌 session이 적절함
-    * SSL확보를 위해 https로 전환해야 함
-    * 높은 보안성을 필요로 하는 경우, SSL외에도 client에서 공개키 암호화한 text를 server에게 전송해야 함
-    * server에 저장하는 login 정보는 hash 처리되어야 함
-
-`routes/login.js` 코드를 보고 파악해야 하는 사항은 다음과 같습니다.
 * cookie-parser와 cookie 설정법
+```javascript
+var express = require('express');
+var cookieParser = require('cookie-parser');
+
+var app = express();
+app.use(cookieParser());
+
+app.get('/', function(req, res) {
+    console.log('Cookies: ', req.cookies)
+})
+```
+
 * cookie의 timeout, age
 * chrome 개발자 도구 > applications > cookie에서 cookie가 생긴 것을 확인 (**screenshot 기록해둘 것**)
 * login process과 redirect의 response code
