@@ -38,7 +38,7 @@
 
 ### 12월 26일
 
-* cookie-parser와 cookie 설정법
+* cookie-parser 사용법
 ```javascript
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -51,10 +51,36 @@ app.get('/', function(req, res) {
 })
 ```
 
+* 브라우저에서 cookie 생성
+```javascript
+res.cookie('name', 'waas', {
+      maxAge: 30000
+    })
+```
+
 * cookie의 timeout, age
-* chrome 개발자 도구 > applications > cookie에서 cookie가 생긴 것을 확인 (**screenshot 기록해둘 것**)
+    - cookie 생성 옵션 중 maxAge 값을 통해 cookie의 age를 설정할 수 있다.
+        - 상단 코드에서는 maxAge를 30000ms, 즉 30초로 설정하였다.
+    - 이 외에도 `expires`, `path`, `domain`, `secure` 등 여러 option이 존재한다.
+
+* chrome 개발자 도구 > applications > cookie에서 cookie가 생긴 것을 확인 
+![12_26_cookie](./docsimg/12_26_cookie.PNG)
+
 * login process과 redirect의 response code
+    - login.ejs에서 post 방식으로 id와 pw를 전달한다.
+    ```html
+    <form method="post">
+            ID: <input name="id"/><br/>
+            PW: <input name="pw" type="password"/><br/>
+            <input type="submit" value="로그인"/>
+        </form>
+    ```
+    - login.js에서 <id, pw>가 <'waas', 'team'>이라면 cookie를 생성한다.
+    - 302 response code로 redirect 한다.(개발자도구 > Network에서 확인 가능)
+
 * `/login/isLoggin`에서 400, 200 response code 확인
+    - cookie name이 존재하면 304 response code와 'waas team'
+    - 그렇지 않으면 401 response code와 'unauthorized'
 
 ### 12월 27일: login 구현체 수정
 26일의 구현체를 살펴보면 1개의 ID로만 로그인을 하는 상황입니다.
